@@ -12,29 +12,19 @@ Output : False
 */
 
 int Solution::isPalindrome(int A) {
-    string s = to_string(A);
-    int i,j=0;
-    if(s.size()==2)
+    int y=0;
+    int x = A;
+    while(A>0)
     {
-        if(s[0]==s[1])
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+        y = (y*10) + (A%10);
+        A = A/10;
+    }
+    if(x==y)
+    {
+        return 1;
     }
     else
     {
-    for (i=s.size()-1; i>s.size()/2; i--)
-    {
-        if(s[i]!=s[j])
-        {
-            return 0;
-        }
-        j++;
-    }
-    return 1;
+        return 0;
     }
 }
